@@ -3,6 +3,7 @@ import express from "express";
 import Locals from "./Locals";
 import Routes from "./Routes";
 import Logger from "../middlewares/Logger";
+import winston from "winston";
 // import Bootstrap from '../middlewares/Kernel';
 // import ExceptionHandler from '../exception/Handler';
 
@@ -55,17 +56,8 @@ class Express {
     // Start the server on the specified port
     this.express.listen(port, (_error: any) => {
       if (_error) {
-        return Logger.error("Error at running server, error: ", _error);
+        return Logger.error(_error);
       }
-      try {
-        //@ts-ignore
-        Logger.error.d("hello");
-      } catch (e) {
-        console.log("Error here", e);
-        Logger.error(e);
-      }
-
-      Logger.info("Hello world", "hellooo");
     });
   }
 }

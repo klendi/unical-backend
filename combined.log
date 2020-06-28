@@ -1,0 +1,24 @@
+{"service":"user-service","e":{},"level":"error","message":"error at express"}
+{"service":"user-service","e":{},"level":"error","message":"error at express"}
+{"service":"user-service","e":{},"level":"error","message":"error at express"}
+{"service":"user-service","e":{},"level":"error","message":"error at express"}
+{"service":"user-service","e":{},"level":"error","message":"error at express"}
+{"service":"user-service","e":{},"level":"error","message":"error at express"}
+{"service":"user-service","e":{},"level":"error","message":"error at express"}
+{"service":"user-service","e":{},"level":"error","message":"error at express"}
+{"e":{},"level":"error","message":"error at express"}
+{"e":{},"level":"error","message":"error at express"}
+{"e":{},"level":"error","message":"error at express"}
+{"e":{},"level":"error","message":"error at express"}
+{"e":{},"level":"error","message":"error at express"}
+{"e":{},"level":"error","message":"error at express"}
+{"e":{},"level":"error","message":"error at express"}
+{"e":{},"level":"error","message":"error at express"}
+{"level":"error","message":"error at expressLogger_1.default.error.d is not a function","stack":"TypeError: Logger_1.default.error.d is not a function\n    at Server.<anonymous> (/Users/klendi/Desktop/Projects/unical-backend/src/providers/Express.ts:63:22)\n    at Object.onceWrapper (events.js:286:20)\n    at Server.emit (events.js:203:15)\n    at emitListeningNT (net.js:1314:10)\n    at process._tickCallback (internal/process/next_tick.js:63:19)"}
+{"level":"error","message":"error at expressLogger_1.default.error.d is not a function","stack":"TypeError: Logger_1.default.error.d is not a function\n    at Server.<anonymous> (/Users/klendi/Desktop/Projects/unical-backend/src/providers/Express.ts:63:22)\n    at Object.onceWrapper (events.js:286:20)\n    at Server.emit (events.js:203:15)\n    at emitListeningNT (net.js:1314:10)\n    at process._tickCallback (internal/process/next_tick.js:63:19)"}
+{"level":"error","message":"error at expressLogger_1.default.error.d is not a function","stack":"TypeError: Logger_1.default.error.d is not a function\n    at Server.<anonymous> (/Users/klendi/Desktop/Projects/unical-backend/src/providers/Express.ts:63:22)\n    at Object.onceWrapper (events.js:286:20)\n    at Server.emit (events.js:203:15)\n    at emitListeningNT (net.js:1314:10)\n    at process._tickCallback (internal/process/next_tick.js:63:19)"}
+{"level":"error","message":"error at expressLogger_1.default.error.d is not a function","stack":"TypeError: Logger_1.default.error.d is not a function\n    at Server.<anonymous> (/Users/klendi/Desktop/Projects/unical-backend/src/providers/Express.ts:63:22)\n    at Object.onceWrapper (events.js:286:20)\n    at Server.emit (events.js:203:15)\n    at emitListeningNT (net.js:1314:10)\n    at process._tickCallback (internal/process/next_tick.js:63:19)"}
+{"level":"error","message":"error at expressLogger_1.default.error.d is not a function","stack":"TypeError: Logger_1.default.error.d is not a function\n    at Server.<anonymous> (/Users/klendi/Desktop/Projects/unical-backend/src/providers/Express.ts:63:22)\n    at Object.onceWrapper (events.js:286:20)\n    at Server.emit (events.js:203:15)\n    at emitListeningNT (net.js:1314:10)\n    at process._tickCallback (internal/process/next_tick.js:63:19)"}
+{"level":"error","message":"error at expressLogger_1.default.error.d is not a function","stack":"TypeError: Logger_1.default.error.d is not a function\n    at Server.<anonymous> (/Users/klendi/Desktop/Projects/unical-backend/src/providers/Express.ts:63:22)\n    at Object.onceWrapper (events.js:286:20)\n    at Server.emit (events.js:203:15)\n    at emitListeningNT (net.js:1314:10)\n    at process._tickCallback (internal/process/next_tick.js:63:19)"}
+{"level":"error","message":"error at expressLogger_1.default.error.d is not a function","stack":"TypeError: Logger_1.default.error.d is not a function\n    at Server.<anonymous> (/Users/klendi/Desktop/Projects/unical-backend/src/providers/Express.ts:63:22)\n    at Object.onceWrapper (events.js:286:20)\n    at Server.emit (events.js:203:15)\n    at emitListeningNT (net.js:1314:10)\n    at process._tickCallback (internal/process/next_tick.js:63:19)"}
+{"level":"error","message":"error at expressLogger_1.default.error.d is not a function","stack":"TypeError: Logger_1.default.error.d is not a function\n    at Server.<anonymous> (/Users/klendi/Desktop/Projects/unical-backend/src/providers/Express.ts:63:22)\n    at Object.onceWrapper (events.js:286:20)\n    at Server.emit (events.js:203:15)\n    at emitListeningNT (net.js:1314:10)\n    at process._tickCallback (internal/process/next_tick.js:63:19)"}

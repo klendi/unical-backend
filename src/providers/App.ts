@@ -30,7 +30,6 @@ class App {
   // Loads the Database Pool
   public loadDatabase(): void {
     Log.info("Database :: Booting @ Master...");
-
     // Database.init();
   }
 

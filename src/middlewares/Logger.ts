@@ -1,68 +1,40 @@
 import winston from "winston";
 
-class Logger {
-  constructor() {
-    this.logger = winston.createLogger({
-      level: "info",
+const devFormat = () => {
+  const formatMessage = (info: any) => `${info.level} ${info.message}`;
+  const formatError = (info: any) =>
+    `${info.timestamp} ${info.level} ${info.message}\n\n${info.stack}\n`;
+  const format = (info: any) =>
+    info instanceof Error ? formatError(info) : formatMessage(info);
+  return winston.format.combine(
+    winston.format.colorize(),
+    winston.format.errors({ stack: true }),
+    winston.format.printf(format)
+  );
+};
+
+const logger = winston.createLogger({
+  level: "info",
+  format:
+    process.env.NODE_ENV === "development"
+      ? devFormat()
+      : winston.format.json(),
+  transports: [
+    new winston.transports.File({ filename: "error.log", level: "error" }),
+  ],
+});
+
+if (process.env.NODE_ENV !== "production") {
+  logger.add(
+    new winston.transports.Console({
       format: winston.format.combine(
-        winston.format.json(),
+        winston.format.colorize(),
         winston.format.timestamp({
           format: "YYYY-MM-DD HH:mm:ss",
         })
-        // winston.format.printf(
-        //   (info) =>
-        //     `${info.timestamp} ${info.level}: ${info.message}` +
-        //     (info.splat !== undefined ? `${info.splat}` : " ")
-        // )
       ),
-      transports: [
-        new winston.transports.File({
-          filename: "error.log",
-          level: "error",
-        }),
-      ],
-    });
-
-    if (process.env.NODE_ENV !== "production") {
-      this.logger.add(
-        new winston.transports.Console({
-          format: winston.format.combine(
-            winston.format.colorize(),
-            winston.format.json(),
-            winston.format.printf(
-              (info) =>
-                `${info.timestamp} ${info.level}: ${info.message}` +
-                (info.splat !== undefined ? `${info.splat}` : " ")
-            ),
-            winston.format.timestamp({
-              format: "YYYY-MM-DD HH:mm:ss",
-            })
-          ),
-        })
-      );
-    }
-  }
-
-  private logger: winston.Logger;
-
-  // Adds INFO prefix string to the log string
-  public info(...args: any[]): any {
-    const data = args.reduce((acc, item) => (acc += " " + item));
-    return this.logger.info(data);
-  }
-
-  // Adds WARN prefix string to the log string
-  public warn(...args: any[]): any {
-    const data = args.reduce((acc, item) => (acc += " " + item));
-    return this.logger.info(data);
-  }
-
-  // Adds ERROR prefix string to the log string
-  public error(...args: any[]): any {
-    const data = args.reduce((acc, item) => (acc += " " + item));
-
-    return this.logger.error(data);
-  }
+    })
+  );
 }
 
-export default new Logger();
+export default logger;
