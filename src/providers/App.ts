@@ -2,7 +2,7 @@ import * as path from "path";
 import * as dotenv from "dotenv";
 
 import Express from "./Express";
-// import { Database } from './Database';
+import { Database } from "./Database";
 
 import Locals from "./Locals";
 import Log from "../middlewares/Logger";
@@ -30,7 +30,7 @@ class App {
   // Loads the Database Pool
   public loadDatabase(): void {
     Log.info("Database :: Booting @ Master...");
-    // Database.init();
+    Database.init();
   }
 
   // Loads the Worker Cluster

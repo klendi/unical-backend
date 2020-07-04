@@ -3,7 +3,8 @@ import express from "express";
 import Locals from "./Locals";
 import Routes from "./Routes";
 import Logger from "../middlewares/Logger";
-import winston from "winston";
+import Http from "../middlewares/Http";
+import Kernel from "../middlewares/Kernel";
 // import Bootstrap from '../middlewares/Kernel';
 // import ExceptionHandler from '../exception/Handler';
 
@@ -32,7 +33,7 @@ class Express {
    * Mounts all the defined middlewares
    */
   private mountMiddlewares(): void {
-    // this.express = Bootstrap.init(this.express);
+    this.express = Kernel.init(this.express);
   }
 
   /**

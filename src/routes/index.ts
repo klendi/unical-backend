@@ -1,4 +1,5 @@
 import { Router } from "express";
+import { UserController } from "../controllers/UserController";
 
 class Api {
   public apiRouter = Router();
@@ -8,9 +9,9 @@ class Api {
   }
 
   private initate(): void {
-    //  Router with authentication middleware imported from ''../middleware module
     // this.apiRouter.use('/users',  [Tokencheck, TokenVerify],UserRouter);
     // this.apiRouter.use('/users',UserRouter);
+    this.apiRouter.post("/user/create", UserController.addUser);
   }
 }
 

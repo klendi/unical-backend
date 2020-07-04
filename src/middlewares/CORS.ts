@@ -1,4 +1,4 @@
-import * as cors from "cors";
+import cors from "cors";
 import { Application } from "express";
 
 import Log from "./Logger";
