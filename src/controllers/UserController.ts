@@ -1,12 +1,13 @@
-import { Request, Response } from "express";
+import * as express from "express";
 
 import { User } from "../models/User";
 import { validate, validateOrReject } from "class-validator";
+
 import logger from "../middlewares/Logger";
 
 export class UserController {
-  public static async addUser(req: Request, res: Response) {
-    const username = req.body.username;
+  public static async addUser(req: express.Request, res: express.Response) {
+    const username = req.body.username.toLowerCase();
 
     const user = new User({ username });
 
