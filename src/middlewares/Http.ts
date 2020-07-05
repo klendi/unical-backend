@@ -1,6 +1,7 @@
 import * as cors from "cors";
 import { Application } from "express";
 import * as bodyParser from "body-parser";
+import helmet from "helmet";
 
 import Log from "./Logger";
 import Locals from "../providers/Locals";
@@ -23,6 +24,8 @@ class Http {
         extended: false,
       })
     );
+
+    _express.use(helmet());
 
     // Disable the x-powered-by header in response
     _express.disable("x-powered-by");
