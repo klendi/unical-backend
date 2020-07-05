@@ -4,6 +4,7 @@ import {
   Model,
   PrimaryKey,
   BelongsTo,
+  ForeignKey,
 } from "sequelize-typescript";
 import { DataType } from "sequelize-typescript";
 import { User } from "./User";
@@ -14,9 +15,11 @@ export class UserFollow extends Model<UserFollow> {
   @Column(DataType.BIGINT)
   id!: number;
 
-  @BelongsTo(() => User)
-  user_id!: User;
+  @ForeignKey(() => User)
+  @Column
+  user_id!: number;
 
-  @BelongsTo(() => User)
-  target_user_id!: User;
+  @ForeignKey(() => User)
+  @Column
+  target_user_id!: number;
 }

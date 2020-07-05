@@ -8,6 +8,7 @@ import {
   BelongsTo,
   AllowNull,
   Default,
+  ForeignKey,
 } from "sequelize-typescript";
 import { DataType } from "sequelize-typescript";
 import { Post } from "./Post";
@@ -19,8 +20,16 @@ export class PostReaction extends Model<PostReaction> {
   id!: number;
 
   @BelongsTo(() => Post)
-  post_id!: Post;
+  post!: Post;
 
   @BelongsTo(() => Reaction)
-  reaction_id!: Reaction;
+  reaction!: Reaction;
+
+  @ForeignKey(() => Post)
+  @Column
+  post_id!: number;
+
+  @ForeignKey(() => Reaction)
+  @Column
+  reaction_id!: number;
 }

@@ -16,8 +16,8 @@ export class Database {
     });
 
     try {
-      // await sequelize.sync({ force: true });
-      await sequelize.sync();
+      await sequelize.sync({ force: true });
+      // await sequelize.sync();
       log.info("Database :: Connection has been established successfully.");
     } catch (error) {
       log.error("Database :: Error at connecting to the database: " + error);

@@ -7,6 +7,7 @@ import {
   BelongsTo,
   AllowNull,
   Default,
+  ForeignKey,
 } from "sequelize-typescript";
 import { DataType } from "sequelize-typescript";
 import { Post } from "./Post";
@@ -18,8 +19,16 @@ export class PostMedia extends Model<PostMedia> {
   id!: number;
 
   @BelongsTo(() => Post)
-  post_id!: Post;
+  post!: Post;
 
   @BelongsTo(() => Media)
-  media_id!: Media;
+  media!: Media;
+
+  @ForeignKey(() => Post)
+  @Column
+  post_id!: number;
+
+  @ForeignKey(() => Media)
+  @Column
+  media_id!: number;
 }

@@ -1,3 +1,5 @@
+import { BioDescription } from "./BioDescription";
+import { UserFollow } from "./UserFollow";
 import {
   Table,
   Column,
@@ -34,4 +36,10 @@ export class User extends Model<UserInterface> {
 
   @BelongsToMany(() => User, () => BannerUser, "target_user_id", "user_id")
   bannedUsers!: BannerUser[];
+
+  @BelongsToMany(() => User, () => UserFollow, "target_user_id", "user_id")
+  following!: UserFollow[];
+
+  @HasMany(() => BioDescription)
+  bios!: BioDescription[];
 }
