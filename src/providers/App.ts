@@ -33,10 +33,10 @@ class App {
     Database.init();
   }
 
-  // Loads the Worker Cluster
-  public loadWorker(): void {
-    Log.info("Worker :: Booting @ Master...");
-  }
+  // // Loads the Worker Cluster
+  // public loadWorker(): void {
+  //   Log.info("Worker :: Booting @ Master...");
+  // }
 }
 
 export default new App();
