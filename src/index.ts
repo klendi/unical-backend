@@ -40,7 +40,7 @@ if (cluster.isMaster && process.env.NODE_ENV === "production") {
    * Note: we normally start worker after
    * the entire app is loaded
    */
-  setTimeout(() => App.loadWorker(), 1000 * 60);
+  // setTimeout(() => App.loadWorker(), 1000 * 60);
 } else {
   /**
    * Run the Database pool
