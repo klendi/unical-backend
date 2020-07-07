@@ -34,6 +34,11 @@ export class User extends Model<UserInterface> {
   @Matches(/^(?!.*\.\.)(?!.*\.$)[^\W][\w.]{0,29}$/)
   username!: string;
 
+  @Column(DataType.STRING(100))
+  @MinLength(1, { message: "Name is too short" })
+  @MaxLength(100, { message: "Name is too long" })
+  name!: string;
+
   @BelongsToMany(() => User, () => BannerUser, "target_user_id", "user_id")
   bannedUsers!: BannerUser[];
 
@@ -41,5 +46,5 @@ export class User extends Model<UserInterface> {
   following!: UserFollow[];
 
   @HasMany(() => BioDescription)
-  bios!: BioDescription[];
+  bio!: BioDescription[];
 }
