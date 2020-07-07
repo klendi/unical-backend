@@ -46,19 +46,25 @@ class Express {
   /**
    * Starts the express server
    */
-  public init(): any {
-    const port: number = Locals.config().port;
+  public init() {
+    return new Promise((resolve, reject) => {
+      const port: number = Locals.config().port;
 
-    // Registering Exception / Error Handlers
-    // this.express.use(ExceptionHandler.logErrors);
-    // this.express.use(ExceptionHandler.errorHandler);
-    // this.express = ExceptionHandler.notFoundHandler(this.express);
+      // Registering Exception / Error Handlers
+      // this.express.use(ExceptionHandler.logErrors);
+      // this.express.use(ExceptionHandler.errorHandler);
+      // this.express = ExceptionHandler.notFoundHandler(this.express);
 
-    // Start the server on the specified port
-    this.express.listen(port, (_error: any) => {
-      if (_error) {
-        return Logger.error(_error);
-      }
+      // Start the server on the specified port
+      this.express.listen(port, (_error: any) => {
+        if (_error) {
+          Logger.error(_error);
+          reject(_error);
+          return;
+        }
+
+        resolve();
+      });
     });
   }
 }

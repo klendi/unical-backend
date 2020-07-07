@@ -14,7 +14,7 @@ const devFormat = () => {
 };
 
 const logger = winston.createLogger({
-  level: "info",
+  level: process.env.LOGGER_LEVEL || "error",
   format:
     process.env.NODE_ENV === "development"
       ? devFormat()
@@ -27,6 +27,7 @@ const logger = winston.createLogger({
 if (process.env.NODE_ENV !== "production") {
   logger.add(
     new winston.transports.Console({
+      level: process.env.LOGGER_LEVEL || "error",
       format: winston.format.combine(
         winston.format.colorize(),
         winston.format.timestamp({

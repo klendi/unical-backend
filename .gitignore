@@ -6,3 +6,7 @@ public/static
 *.marko.js
 .env.example
 .logs/*.log
+
+.env.production
+.env.test
+.env.development

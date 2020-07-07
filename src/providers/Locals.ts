@@ -1,10 +1,11 @@
 import { Application } from "express";
 import * as path from "path";
 import * as dotenv from "dotenv";
+import { loadDotEnv } from "../utils/LoadEnvFiles";
 
 class Locals {
   public static config(): any {
-    dotenv.config({ path: path.join(__dirname, "../../.env") });
+    loadDotEnv();
 
     const url = process.env.APP_URL || `http://localhost:${process.env.PORT}`;
     const port = process.env.PORT || 4040;
@@ -25,6 +26,14 @@ class Locals {
     const redisPrefix = process.env.REDIS_DB || "q";
     const redisDB = process.env.REDIS_PREFIX || 3;
 
+    const dbName = process.env.DB_NAME || "db.sqlite";
+    const dbUser = process.env.DB_USER || "root";
+    const dbPassword = process.env.DB_PASSWORD || "";
+    const dbHost = process.env.DB_HOST || "localhost";
+    const dbStorage =
+      process.env.DB_HOST || path.join(__dirname, "../..", "db.sqlite");
+    const dbDialect = process.env.DB_DIALECT || "sqlite";
+
     return {
       appSecret,
       apiPrefix,
@@ -39,8 +48,16 @@ class Locals {
       redisHttpHost,
       redisPrefix,
       url,
+      dbName,
+      dbUser,
+      dbPassword,
+      dbHost,
+      dbDialect,
+      dbStorage,
     };
   }
+
+  public static dbConfig(): any {}
 
   /**
    * Injects your config to the app's locals

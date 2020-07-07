@@ -22,8 +22,6 @@ export class UserController {
 
     await user.save();
 
-    console.log("Id is ", user.id);
-
     const bioObj = new BioDescription({
       content: req.body.bio,
       user_id: user.id,

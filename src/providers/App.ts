@@ -21,16 +21,16 @@ class App {
   }
 
   // Loads your Server
-  public loadServer(): void {
+  public async loadServer() {
     Log.info("Server :: Booting @ Master...");
 
-    Express.init();
+    await Express.init();
   }
 
   // Loads the Database Pool
-  public loadDatabase(): void {
+  public async loadDatabase() {
     Log.info("Database :: Booting @ Master...");
-    Database.init();
+    await Database.init();
   }
 
   // // Loads the Worker Cluster
